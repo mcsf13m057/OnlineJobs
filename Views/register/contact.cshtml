@@ -1,0 +1,145 @@
+﻿@model Term_project.Models.Register
+
+@{
+
+    ViewBag.Title = "Register";
+}
+@*<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>*@
+
+
+<!--==============================content================================-->
+   
+    <section id="content">
+        <div class="main">
+            <div class="container_12">
+                <div class="wrapper">
+                    <div>
+                        <article class="grid_8">
+                            <h3>Register For Employer</h3>
+
+                            @using (Html.BeginForm("Addregister", "register", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                            {
+                                @Html.AntiForgeryToken()
+                            <fieldset>
+                                <table>
+
+                                    <tr>
+                                        <td>
+
+                                            <label>
+                                                <span class="text-form">Name:</span>
+                                                @Html.TextBoxFor(m => m.name)
+                                                @Html.ValidationMessageFor(m => m.name)
+                       
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label>
+                                                <span class="text-form">Email:   </span>
+                                                @Html.TextBoxFor(m => m.email)
+                                            @Html.ValidationMessageFor(m => m.email)
+                                            </label>
+                                        </td>
+                                    </tr>
+
+                                     <tr>
+                                        <td>
+                                            <label>
+                                                <span class="text-form">Username:   </span>
+                                                @Html.TextBoxFor(m => m.username)
+                                                @Html.ValidationMessageFor(m => m.username)
+
+
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                <td>
+                    <label>
+                        <span class="text-form">Passsword: </span>
+                        @Html.PasswordFor(m => m.password)
+                        @Html.ValidationMessageFor(m => m.password)
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>@Html.DropDownListFor(m => m.type, new SelectList(
+                  new List<Object>{
+                       new { value = "jobseeker" , text = "Job Seeker"  },
+                       new { value = "employer" , text = "Employer" }
+                    },
+                  "value",
+                  "text",
+                   2))                   </label>
+                </td>
+            </tr>
+
+
+
+
+                                    <tr>
+                                        <td>
+
+                                            <input type="submit" value="Register" />
+                                        </td>
+                                    </tr>
+                                </table>
+
+</fieldset>
+                        
+                            }          
+                            @section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+                            }
+</div>
+                </div>
+
+ 
+                
+            </div>
+
+            <article class="grid_4">
+                <div class="indent-top indent-left">
+                    <div class="wrapper p3">
+                        <figure class="img-indent-r"><a href="#"><img src="/images/page1-img1.png" alt=""></a></figure>
+                        <div class="extra-wrap"> <strong class="title-1">Tell Your<strong>Friends</strong><em>About</em><em>Our Jobs Website</em></strong> </div>
+                    </div>
+                </div>
+            </article>
+                    <div>
+
+                        <div class="container_12">
+                            <div class="wrapper">
+                                <div>
+                                    </div>
+
+
+
+                                    @*foreach (var s in Model)
+                        {
+                            <table>
+                                <tr>
+                                    <td>@s.Name</td>
+                                    <td>@s.Email</td>
+
+                                    <td>@s.Phone</td>
+
+                                <td>@s.username</td>
+                                <td>@s.password</td>
+                            </tr>
+                        </table> }*@
+
+
+
+
+
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+</section>
+<!--==============================footer=================================-->

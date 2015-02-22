@@ -1,0 +1,165 @@
+﻿@model Term_project.Models.login
+@{
+
+    ViewBag.Title = "Home";
+}
+
+
+
+    <!--==============================content================================-->
+    <section id="content">
+        <div class="main">
+            <div class="container_12">
+             
+                <center>
+                    <div id="templatemo_services">
+                        <div class="service_box">
+                            <center>
+                                <img src="~/images/world128.png" alt="Strategic Planing Icon" />
+                                <h3>Resume </h3>
+                                <h5 id="h51">  Upload your resume and create your resume online  </h5>
+                                <div><button id="b1">Read More</button></div>
+                            </center>
+                        </div>
+
+                        <div class="service_box">
+                            <center>
+                                <img src="~/images/people.png" alt="Strategic Planing Icon" />
+                                <h3>Online Jobs</h3>
+                                <h5 id="h52">We help you find best Jobs in Pakistan! </h5>
+                                <div><button id="b2"> Read More</button></div>
+                            </center>
+                        </div>
+
+                        <div class="service_box">
+                            <center>
+                                <img src="~/images/vault128.png" alt="Strategic Planing Icon" />
+                                <h3>Earning</h3>
+                                <h5 id="h53">Interact with employer and earn the profit of your skills </h5>
+                                <div><button id="b3">Read more</button></div>
+                            </center>
+                        </div>
+                    </div>
+                </center>
+                <div class="wrapper">
+                    <article class="grid_8">
+                        <div>
+
+
+                            <br />
+                            <br />
+
+                            <p>              </p> <p>              </p>
+                        </div>
+                        @*<h3 class="p2">Upload Your Resume Now!</h3>
+                        <!--===============uploaaaaaaaaaaaaaaaaaaddddddddddddddddd=================================-->
+
+                        <form action="/home/save" method="post" enctype="multipart/form-data">
+
+                            <h4>Upload Image:</h4> <input type="file" name="image" /> <br />
+
+                            <br />
+
+                            <input type="submit" value="upload" />
+                        </form>
+                        <!--===============uploaaaaaaaaaaaaaaaaaaddddddddddddddddd=================================-->*@
+
+
+
+                        <p>  <p></p> </p>
+                        <h4>Welcome!</h4>
+
+                        <p class="p2">You can work anywhere in this global village at your desire time and can take salary according to your hard work and caliber.
+                        <p class="p3">
+                            It is a cool business working at the home, a peaceful environment where u can be free from the pressure of office and boss. Here we are providing trustworthy chance to you to earn at home if you become Axactmoney member! You have to do some simple jobs like insertion ads on the Internet.
+                            There will be no difference of any experience it will need only hardworking
+                        </p>
+                        <h3 class="p1">Here you can find all services in one place:</h3>
+                        <div class="wrapper">
+                            <div class="grid_4 alpha">
+
+
+
+                                <ul class="list-1">
+
+
+                                    <li><a href="#">Search for the relevant job</a></li>
+                                    <li><a href="#">Full-Fill the given requirement</a></li>
+                                    <li><a href="#">Sign up and sign in with us</a></li>
+                                    <li><a href="#">Complete your resume online</a></li>
+                                    <li><a href="#">Submit your resume</a></li>
+                                </ul>
+                            </div>
+                            <div class="grid_4 omega">
+                                <h4> <a href="#">How to Apply for Registration</a></h4>
+                                <ul class="list-1 indent-bot">
+
+
+                                    <li>Create your account by going to Sign Up page and provide your credentials.</li>
+                                    <li> On successful login, click Create Resume button</li>
+                                    <li>Update Personal Information.</li>
+                                    <li>Send Resume to data bank</li>
+                                    <li>Click Active Jobs link.</li>
+                                    <li> Select one of them. Click for Detail link to see the details of your chosen job.</li>
+
+                                </ul>
+
+                                <a class="link-1 margin-left" href="#">All Services</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="grid_4">
+                        <div class="indent-top indent-left">
+                            <div class="wrapper margin-bot">
+                                <!--===============LOOOOOOOOOOOgggggggiiiiiiiiiiiiiiin=================================-->
+
+
+
+                                @using (Html.BeginForm("loginconfirm", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                                {
+                                       @Html.ValidationSummary(true,"Login faild ,check your login details")
+                                            {
+ 
+                                     <strong>Login here:</strong>
+                                                @*<br><strong>UserName:</strong><br />*@
+                                              <br><strong> @Html.LabelFor(m => m.username)</strong><br />
+                                                @Html.TextBoxFor(m => m.username)<br />
+                                                  @Html.ValidationMessageFor(m => m.username)
+                              
+                                         
+                                    
+                                                 @*Password:</strong><br />*@
+                                             <br><strong>@Html.LabelFor(m => m.password) </strong><br />
+                                                @Html.PasswordFor(m => m.password)<br />
+                                                 @Html.ValidationMessageFor(m => m.password)
+
+                                                 <br><strong>Type:</strong><br />
+                                               @*@Html.TextBoxFor(m => m.type)*@
+                                    @Html.DropDownListFor(m => m.type, new SelectList(
+                  new List<Object>{ 
+                       new { value = "jobseeker" , text = "Job Seeker"  },
+                       new { value = "employer" , text = "Employer" }
+                    },
+                  "value",
+                  "text",
+                   2))
+                                   
+                                                 <input type="submit"  value="login" />
+                                                }
+                                }
+                               
+
+                            </div>
+                            <h3>Latest News</h3>
+                            <time class="tdate-1 p2" datetime="2012-02-21">23 January, 2015</time>
+                            <p class="prev-indent-bot">	Job Opportunities in Jail Department, Government of Balochistan Quetta - Test / Interview Postponed</p>
+                            <p><a class="link-1" href="#"><a href="http://www.dailypaperpk.com/jobs-by-source/daily-jang">Visit Jang newspaper for more</a> </a></p>
+
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--==============================footer=================================-->
+  

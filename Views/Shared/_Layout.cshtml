@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Online Resume</title>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="~/images/Hopstarter-Sleek-Xp-Basic-Money.ico" />
+    <link rel="stylesheet" href="~/content/reset.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="~/content/style.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="~/content/grid.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="~/content/ie.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="~/content/site.css" type="text/css" media="screen">
+    <link href="~/Content/templatemo_style.css" rel="stylesheet" />
+    <link href="~/Content/flexslider.css" rel="stylesheet" />
+    <script src="~/scripts/jquery-1.7.1.min.js"></script>
+    <script src="~/scripts/cufon-yui.js"></script>
+    <script src="~/scripts/cufon-replace.js"></script>
+    <script src="~/scripts/Vegur_500.font.js"></script>
+    <script src="~/scripts/Ropa_Sans_400.font.js"></script>
+    <script src="~/scripts/FF-cash.js"></script>
+    <script src="~/scripts/tms-0.3.js"></script>
+    <script src="~/scripts/tms_presets.js"></script>
+    <script src="~/scripts/jquery.easing.1.3.js"></script>
+    <script src="~/scripts/script.js"></script>
+    <script src="~/Scripts/jquery.flexslider-min.js"></script>
+    <script src="~/Scripts/jquery-1.8.0.min.js"></script>
+    <script src="~/Scripts/functions.js"></script>
+    <script src="~/Scripts/modernizr.custom.js"></script>
+    <!--[if lt IE 9]>
+    <script src="js/html5.js"></script>
+    <link rel="stylesheet" href="css/ie.css" type="text/css" media="screen">
+    <![endif]-->
+    <script>Cufon.now();</script>
+    <script>
+
+        $(window).load(function () {
+            $('.slider')._TMS({
+                duration: 1000,
+                easing: 'easeOutQuint',
+                preset: 'diagonalFade',
+                slideshow: 7000,
+                banners: false,
+                pauseOnHover: true,
+                pagination: true,
+                pagNums: false
+
+            });
+        });
+
+    </script>
+
+
+</head>`
+<body id="page1">
+    <!--==============================header=================================-->
+    <header>
+        <div class="border-bot">
+            <div class="main">
+                <h1>
+                    <img src="~/Images/logo1.png" style="display:block;	width:285px;height:51px;" />
+                </h1>
+                <nav>
+                    <ul class="menu">
+                        <li><a href="@Url.Action("index", "Home")">Home</a></li>
+                        <li><a href="@Url.Action("events", "event")">Events</a></li>
+                        @*<li><a href="@Url.Action("services", "resume")">Resume Creator</a></li>*@
+                        @*<li><a href="@Url.Action("jobs", "jobs")">Jobs</a></li>*@
+                        <li><a href="@Url.Action("contact", "register")">Register</a></li>
+                        <li>  @if (Session["loggedin"] != null)
+                {
+                    using (Html.BeginForm("logout", "jobs", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                    {
+                        <input type="submit" value="Log out" />
+                    }
+                }</li>
+                    </ul>
+                </nav>
+              
+                <div class="clear"></div>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function () {
+                $("#h51").hide();
+                $("#h52").hide();
+                $("#h53").hide();
+                $("#b1").click(function () {
+                    $("#h51").toggle();
+                });
+                $("#b2").click(function () {
+                    $("#h52").toggle();
+                });
+                $("#b3").click(function () {
+                    $("#h53").toggle();
+                });
+            });
+        </script>
+       
+    </header>
+    @RenderBody()
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+<footer>
+    <div class="main">
+        <div class="container_12">
+            <div class="wrapper">
+                <div class="grid_3">
+                    <div class="spacer-1"> <a href="index.cshtml"><img src="~/images/logo1.png" height="50px" width="50px"></a> </div>
+                </div>
+                <div class="grid_5">
+                    <div class="indent-top2">
+                        <p class="prev-indent-bot">&copy;Interior Website by <a target="_blank" href="Abdullah">Abdulllah khan</a> </p>
+                        Phone: +92 321 4733 971 Email: <a href="#">MCSF13M057@pucit.edu.pk</a>
+                    </div>
+                </div>
+                <div class="grid_4">
+                    <ul class="list-services">
+                        <li><a class="item-1" href="#"></a></li>
+                        <li><a class="item-2" href="#"></a></li>
+                        <li><a class="item-3" href="#"></a></li>
+                        <li><a class="item-4" href="#"></a></li>
+                    </ul>
+                    <span class="footer-text">&copy; 2012 <a class="link color-2" href="#">Privacy Policy</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+</body>
+</html>

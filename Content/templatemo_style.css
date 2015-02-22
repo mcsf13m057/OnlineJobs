@@ -1,0 +1,53 @@
+.button{
+	margin: 0px;
+	width: 50px;
+	height: 20px;
+	border: 0px;
+	color: #333333;
+	font-weight: bold;
+	background: #000066;
+	cursor: pointer;
+}
+/* End of Form */
+
+.more_button a {
+	clear: both;
+	display: block;
+	width: 100px;
+	height: 22px;
+	margin: 0px;
+	padding: 2px;
+	text-align: center;
+	text-decoration: none;
+	font-weight: bold;
+	color: #FFF;
+	background: navy;
+	border: 1px solid #FFF;
+}
+
+
+#templatemo_services {
+	clear: both;
+	float: left;
+	width: 900px;
+	height: 272px;
+	padding-left: 50px;
+	margin-bottom: 25px;
+}
+
+.service_box {
+	float: left;
+	width: 220px;
+	height: 252px;
+	padding: 10px 15px 10px 15px;
+	margin-right: 50px;
+	background: url(images/boxBG.png) no-repeat;
+}
+
+.service_box p{
+	padding-bottom: 5px;
+}
+
+.service_box img{
+	padding-bottom: 5px;
+}

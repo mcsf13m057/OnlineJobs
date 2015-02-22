@@ -1,0 +1,174 @@
+﻿@model Term_project.Models.job
+@{
+    ViewBag.Title = "update";
+}
+
+<h2>Update Jobs</h2>
+
+<div>
+    <fieldset>
+        @using (Html.BeginForm("updatejob", "jobs", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+
+            <table>
+
+                <tr>
+                    <td>
+                        <label>
+                            <strong>ID:</strong>
+                        </label>
+                    </td>
+                    <td>@Html.TextBoxFor(m => m.Id)</td>
+                    @Html.ValidationMessageFor(m => m.Id)
+
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <strong>Job Title:</strong>
+                        </label>
+                    </td>
+                    <td>@Html.TextBoxFor(m => m.title)</td>
+                    @Html.ValidationMessageFor(m => m.title)
+
+                </tr>
+
+                <tr>
+                    <td>
+                        <label>
+                            <strong>Description:</strong>
+                        </label>
+                    </td>
+                    <td>@Html.TextBoxFor(m => m.description)</td>
+                    @Html.ValidationMessageFor(m => m.description)
+                </tr>
+                <tr>
+                    <td>
+
+                        <label>
+
+                            <strong>Salary:</strong>
+                        </label>
+                    </td>
+                    <td>@Html.TextBoxFor(m => m.salary)</td>
+                    @Html.ValidationMessageFor(m => m.salary)
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <strong>Education:</strong>
+                        </label>
+                    </td>
+                    <td>@Html.TextBoxFor(m => m.education)</td>
+                    @Html.ValidationMessageFor(m => m.education)
+                </tr>
+
+                <tr>
+                    <td>
+
+
+                        <strong>Experience:</strong>
+                    </td>
+                    <td>@Html.TextBoxFor(m => m.experience)
+                        @Html.ValidationMessageFor(m => m.experience)
+                </tr>
+
+
+                <tr>
+                    <td>
+
+                        <input type="submit" value="Update" />
+
+                    </td>
+                </tr>
+
+            </table>
+
+
+        }
+        <a href="@Url.Action("show", "jobs")"> Show Jobs</a>
+
+        <a href="@Url.Action("jobs", "jobs")"> Add Jobs</a>
+
+        <a href="@Url.Action("delete", "jobs")"> Delete Jobs</a>
+    </fieldset>
+
+@*    <h2>Delete Jobs</h2>
+
+    <div>
+        <fieldset>
+            @using (Html.BeginForm("deletejob", "jobs", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+
+                <table>
+
+                    <tr>
+                        <td>
+                            <label>
+                                <strong>ID:</strong>
+                            </label>
+                        </td>
+                        <td>@Html.TextBoxFor(m => m.Id)</td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>
+                                <strong>Job Title:</strong>
+                            </label>
+                        </td>
+                        <td>@Html.TextBoxFor(m => m.title)</td>
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label>
+                                <strong>Description:</strong>
+                            </label>
+                        </td>
+                        <td>@Html.TextBoxFor(m => m.description)</td>
+                    </tr>
+                    <tr>
+                        <td>
+
+                            <label>
+
+                                <strong>Salary:</strong>
+                            </label>
+                        </td>
+                        <td>@Html.TextBoxFor(m => m.salary)</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>
+                                <strong>Education:</strong>
+                            </label>
+                        </td>
+                        <td>@Html.TextBoxFor(m => m.education)</td>
+                    </tr>
+
+                    <tr>
+                        <td>
+
+
+                            <strong>Experience:</strong>
+                        </td>
+                        <td>@Html.TextBoxFor(m => m.experience)
+                    </tr>
+
+
+                    <tr>
+                        <td>
+
+                            <input type="submit" value="Update" />
+
+                        </td>
+                    </tr>
+
+                </table>
+
+
+            }
+    *@    </fieldset>
+    </div>

@@ -1,0 +1,156 @@
+﻿@model Term_project.Models.job
+@{
+
+    ViewBag.Title = "Jobs";
+}
+
+
+<!--==============================content================================-->
+<section id="content">
+  <div class="main">
+    <div class="container_12">
+      <div class="wrapper">
+        <article class="grid_8">
+          <div class="margin-bot">
+            <h3 class="prev-indent-bot">Perspective Development</h3>
+            <div class="wrapper">
+              <figure class="img-indent"><img src="~/images/page4-img1.jpg" alt=""></figure>
+              <div class="extra-wrap">
+                  <h6 class="prev-indent-bot">
+               
+                      Search jobs in Pakistan online, Jobs.com is one of the best job portals for job opportunities in Government & Private sector. Find todays office & home based jobs
+</div>
+
+                <div>
+                    <article class="grid_8">
+                    @using (Html.BeginForm("logout", "jobs", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                       {
+                        <input type="submit" value="Log out" />
+                        }
+                        <h3>Add Delete Update Job</h3>
+                        <h3>Fill the Required Fields</h3>
+                        <fieldset>
+                            @using (Html.BeginForm("Addjob", "jobs", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                            {
+
+                                <table>
+
+                                    <tr>
+                                        <td>
+                                            <label>
+                                                <strong>ID:</strong>
+                                            </label>
+                                        </td>
+                                        <td>@Html.TextBoxFor(m => m.Id)</td> 
+                                          @Html.ValidationMessageFor(m => m.Id)
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label>
+                                                <strong>Job Title:</strong>
+                                            </label>
+                                        </td>
+                                        <td>@Html.TextBoxFor(m => m.title)</td>
+                                        @Html.ValidationMessageFor(m => m.title)
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <label>
+                                                <strong>Description:</strong>
+                                            </label>
+                                        </td>
+                                        <td>@Html.TextBoxFor(m => m.description)</td>
+                                        @Html.ValidationMessageFor(m => m.description)
+                                    </tr>
+                                    <tr>
+                                        <td>
+
+                                            <label>
+
+                                                <strong>Salary:</strong>
+                                            </label>
+                                        </td>
+                                        <td>@Html.TextBoxFor(m => m.salary)</td>
+                                        @Html.ValidationMessageFor(m => m.salary)
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label>
+                                                <strong>Education:</strong>
+                                            </label>
+                                        </td>
+                                        <td>@Html.TextBoxFor(m => m.education)</td>
+                                        @Html.ValidationMessageFor(m => m.education)
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+
+
+                                            <strong>Experience:</strong>
+                                        </td>
+                                        <td>@Html.TextBoxFor(m => m.experience)
+                                            @Html.ValidationMessageFor(m => m.experience)
+                                    </tr>
+
+
+                                    <tr>
+                                        <td>
+
+                                            <input type="submit" value="Add" />
+
+                                        </td>
+                                    </tr>
+                                    
+                                </table>
+
+
+                            }
+                            <a href="@Url.Action("show", "jobs")"> Show Jobs</a>
+                            <a href="@Url.Action("update", "jobs")">Update Jobs</a>
+</fieldset>
+
+
+                </div>
+                </div>          <div class="wrapper">
+
+                                    <h3 class="p1">Career Opportunities</h3>
+
+            <div class="grid_4 alpha">
+                <ul>
+                    <li><a href="#">Food</a></li>
+                    <li><a href="#">Telecommunications</a></li>
+                    <li><a href="#">Operator Inspector</a></li>
+                    <li><a href="#"> Technical Jobs</a></li>
+                    <li><a href="#"> Medical Jobs</a></li>
+                    <li><a href="#"> Accounting And Finance Jobs</a></li>
+                    <li><a href="#"> Management Jobs</a></li>
+                </ul>
+
+                
+                    </div>
+                </div>
+        </article>
+        <article class="grid_4">
+          <div class="indent-left">
+            <h3>We Offers</h3>
+            <ul class="list-1 img-indent-bot">
+              <li><a href="#">Search All Types of jobs</a></li>
+              <li><a href="#">Create Resume Online </a></li>
+              <li><a href="#">Upload Your Resume</a></li>
+              <li><a href="#">Interact with Companies</a></li>
+
+            </ul>
+            <h3 class="prev-indent-bot">Interview Process</h3>
+            <figure class="indent-bot"><img src="~/images/page4-img2.jpg" alt=""></figure>
+            <p class="prev-indent-bot">Upload your CV and get by employee</p>
+            <h6 class="prev-indent-bot">Find Job at sitting your own Place.</h6>
+            <p class="prev-indent-bot">Recieve Email of confirmation of your interview with your upcoming employer.</h6>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+<!--==============================footer=================================-->
